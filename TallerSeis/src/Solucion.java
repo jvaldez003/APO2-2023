@@ -27,6 +27,15 @@ Scanner sc = new Scanner(System.in);
 		int[][] arregloB;
 		arregloB = new int[3][3];
 		
+		int[][] arregloResultanteSuma;
+		arregloResultanteSuma = new int[3][3];
+		
+		int[][] arregloResultanteResta;
+		arregloResultanteResta = new int[3][3];
+		
+		int[][] arregloResultanteMultiplicacion;
+		arregloResultanteMultiplicacion = new int[3][3];
+		
 		int opc;
 		
 		do {
@@ -39,58 +48,104 @@ Scanner sc = new Scanner(System.in);
 			opc=sc.nextInt();
 			
 			switch(opc) {
-			case 1: System.out.println("digite el valor 1 del arreglo");
-			              arregloA[0][0]=sc.nextInt();
-			              System.out.println("digite el valor 2 del arreglo");
-			              arregloA[0][1]=sc.nextInt();
-			              System.out.println("digite el valor 3 del arreglo");
-			              arregloA[0][2]=sc.nextInt();
-			              System.out.println("digite el valor 4 del arreglo");
-			              arregloA[1][1]=sc.nextInt();
-			              System.out.println("digite el valor 5 del arreglo");
-			              arregloA[1][2]=sc.nextInt();
-			              System.out.println("digite el valor 6 del arreglo");
-			              arregloA[1][3]=sc.nextInt();
-			              System.out.println("digite el valor 7 del arreglo");
-			              arregloA[2][1]=sc.nextInt();
-			              System.out.println("digite el valor 8 del arreglo");
-			              arregloA[2][2]=sc.nextInt();
-			              System.out.println("digite el valor 9 del arreglo");
-			              arregloA[3][2]=sc.nextInt();
-			              break;
-			              
-			case 2:    System.out.println("digite el valor 1 del arreglo");
-            arregloB[0][0]=sc.nextInt();
-            System.out.println("digite el valor 2 del arreglo");
-            arregloB[0][1]=sc.nextInt();
-            System.out.println("digite el valor 3 del arreglo");
-            arregloB[0][2]=sc.nextInt();
-            System.out.println("digite el valor 4 del arreglo");
-            arregloB[1][1]=sc.nextInt();
-            System.out.println("digite el valor 5 del arreglo");
-            arregloB[1][2]=sc.nextInt();
-            System.out.println("digite el valor 6 del arreglo");
-            arregloB[1][3]=sc.nextInt();
-            System.out.println("digite el valor 7 del arreglo");
-            arregloB[2][1]=sc.nextInt();
-            System.out.println("digite el valor 8 del arreglo");
-            arregloB[2][2]=sc.nextInt();
-            System.out.println("digite el valor 9 del arreglo");
-            arregloB[3][2]=sc.nextInt();
-            break;
-            
-            
+			case 1: for(int j=0; j<3 ; j++) {
+				for(int i=0; i<3 ; i++) {
+					
+					System.out.println("digite el valor #" + "["+(j+1)+"] ["+(i+1)+"]" + 
+					"para el arreglo A");
+					arregloA[j][i]=sc.nextInt();
+				}
 			}
 			
+			for(int j=0; j< arregloA.length; j++) {
+				for(int i=0; i< arregloA.length; i++) {
+				System.out.println("["+ arregloA[j][i] +"]");
+			}
 			
+			}
+				break;            
+			case 2:    
+				for(int j=0; j<3 ; j++) {
+					for(int i=0; i<3 ; i++) {
+						
+						System.out.println("digite el valor #" + "["+(j+1)+"]["+(i+1)+"]" 
+						+ "para el arreglo B");
+						arregloB[j][i]=sc.nextInt();
+					}
+				}
+				
+				for(int j=0; j< arregloB.length; j++) {
+					for(int i=0; i< arregloB.length; i++) {
+					System.out.println("["+ arregloB[j][i] + "]");
+					}
+					System.out.println();
+					
+					}
+				
+				break;
+				
+			case 3: for(int j=0;j< arregloA.length; j++ ) {
+				for(int i=0 ; i < arregloB.length; i++) {
+					
+					arregloResultanteSuma[j][i]= arregloA[j][i] + arregloB[j][i];
+				}
+			}
+				
+				for (int j=0; j < arregloResultanteSuma.length; j++) {
+					for (int i=0; i < arregloResultanteSuma.length; i++) {
+						System.out.println("["+ arregloResultanteSuma[j][i] +"]");
+					}
+					System.out.println();
+					}
 			
-		}while(opc != 5);
-		
-		
-	}
-	
-	
-	
-	
-
+			break;
+			
+			case 4: for(int j=0;j< arregloA.length; j++ ) {
+				for(int i=0 ; i < arregloB.length; i++) {
+					
+					arregloResultanteResta[j][i]= arregloA[j][i] - arregloB[j][i];
+				}
+			}
+			
+			for(int j=0; j< arregloResultanteResta.length; j++) {
+				for(int i=0; i< arregloResultanteResta.length; i++) {
+				System.out.println("["+ arregloResultanteResta[j][i] + "]");
+				
+			}
+				System.out.println();	
+			}	
+				break;
+				
+			case 5:for(int j=0;j< arregloA.length; j++ ) {
+				for(int i=0 ; i < arregloB.length; i++) {
+					
+					
+					arregloResultanteMultiplicacion[j][i]=  arregloA[j][i]* arregloB[j][i];					
+					
+					
+				}
+			}
+			
+			for(int j=0; j< arregloResultanteMultiplicacion.length; j++) {
+				for(int i=0; i< arregloResultanteMultiplicacion.length; i++) {
+				System.out.println("["+arregloResultanteMultiplicacion[j][i] + "]");
+			}
+			
+				System.out.println();
+			}	
+				break;
+				
+			case 6:
+				System.exit(0);
+				
+			default: System.out.println("opcion invalida, escoga nuevamente ");
+			}
+			
+		}while(opc <= 6);
 }
+
+
+	
+	
+}
+

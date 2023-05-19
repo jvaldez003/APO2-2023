@@ -13,10 +13,9 @@ public class Lanzadera extends Nave {
 	}
 
 
-	@Override
 	public String crearNave() {
 		// TODO Auto-generated method stub
-		return  " nombre: "+ nombre +  "peso"  + peso + " potencia" + potencia
+		return  " nombre: "+ nombre +  " peso"  + peso + " potencia" + potencia
 				+ " empuje: " + empuje + " capacidad" + capacidad;
 	}
 
@@ -31,6 +30,9 @@ public class Lanzadera extends Nave {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+	
 	
 	
 	
